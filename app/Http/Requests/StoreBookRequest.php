@@ -6,6 +6,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Date;
 use OpenApi\Attributes as OA;
+use Tests\Unit\Http\Requests\StoreBookRequestTest;
 
 #[OA\Schema(
     schema: 'StoreBookRequest',
@@ -28,6 +29,9 @@ use OpenApi\Attributes as OA;
         new OA\Property(property: 'authors', type: 'array', items: new OA\Items(type: 'integer', example: 1)),
     ]
 )]
+/**
+ * @var StoreBookRequestTest
+ */
 final class StoreBookRequest extends FormRequest
 {
     public function rules(): array

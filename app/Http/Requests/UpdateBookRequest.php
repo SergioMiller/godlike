@@ -19,6 +19,9 @@ use OpenApi\Attributes as OA;
         new OA\Property(property: 'authors', type: 'array', items: new OA\Items(type: 'integer', example: 1)),
     ]
 )]
+/**
+ * @see UpdateBookRequestTest
+ */
 final class UpdateBookRequest extends FormRequest
 {
     public function rules(): array
