@@ -11,6 +11,9 @@ use App\Services\Book\Dto\UpdateDto;
 use Illuminate\Database\DatabaseManager;
 use Throwable;
 
+/**
+ * @see BookServiceTest
+ */
 readonly class BookService
 {
     public function __construct(
@@ -61,7 +64,7 @@ readonly class BookService
             }
 
             $authors = $this->authorRepository->getByIds($data->getAuthors());
-            $book->authors()->attach($authors->pluck('id')->toArray());
+            $book->authors()->sync($authors->pluck('id')->toArray());
 
             return $book;
         });
