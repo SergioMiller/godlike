@@ -14,7 +14,7 @@ final readonly class UpdateDto implements Arrayable
         private string|null $genre,
         private Carbon|null $publication_date,
         private int|null $amount_of_words,
-        private int|null $price,
+        private float|null $price,
         private array|null $authors,
     ) {
     }
@@ -27,7 +27,7 @@ final readonly class UpdateDto implements Arrayable
             genre: $data['genre'] ?? null,
             publication_date: !empty($data['publication_date']) ? Carbon::createFromDate($data['publication_date']) : null,
             amount_of_words: $data['amount_of_words'] ?? null,
-            price: $data['price'] ?? null,
+            price: !empty($data['price']) ? (float) $data['price'] : null,
             authors: $data['authors'] ?? null,
         );
     }
@@ -70,7 +70,7 @@ final readonly class UpdateDto implements Arrayable
         return $this->amount_of_words;
     }
 
-    public function getPrice(): int|null
+    public function getPrice(): float|null
     {
         return $this->price;
     }

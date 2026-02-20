@@ -14,7 +14,7 @@ final readonly class StoreDto implements Arrayable
         private string $genre,
         private Carbon $publication_date,
         private int $amount_of_words,
-        private int $price,
+        private float $price,
         private array $authors,
     ) {
     }
@@ -27,7 +27,7 @@ final readonly class StoreDto implements Arrayable
             genre: $data['genre'],
             publication_date: Carbon::createFromDate($data['publication_date']),
             amount_of_words: $data['amount_of_words'],
-            price: $data['price'],
+            price: (float) $data['price'],
             authors: $data['authors'],
         );
     }
@@ -70,7 +70,7 @@ final readonly class StoreDto implements Arrayable
         return $this->amount_of_words;
     }
 
-    public function getPrice(): int
+    public function getPrice(): float
     {
         return $this->price;
     }

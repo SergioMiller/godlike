@@ -14,7 +14,7 @@ use Illuminate\Support\Collection;
  * @property string $genre
  * @property string $publication_date
  * @property string $amount_of_words
- * @property string $price
+ * @property float $price
  * @property-read Author[]|Collection $authors
  */
 class Book extends Model
