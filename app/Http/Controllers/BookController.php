@@ -38,7 +38,6 @@ final class BookController extends Controller
             content: new OA\JsonContent(
                 properties: [
                     new OA\Property(property: 'pagination', ref: '#/components/schemas/Pagination'),
-                    //                    new OA\Property(property: 'data', ref: '#/components/schemas/BookResource'),
                     new OA\Property(property: 'data', type: 'array', items: new OA\Items(
                         ref: '#/components/schemas/BookResource'
                     )),
