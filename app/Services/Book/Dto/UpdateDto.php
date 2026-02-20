@@ -6,6 +6,9 @@ namespace App\Services\Book\Dto;
 use Carbon\Carbon;
 use Illuminate\Contracts\Support\Arrayable;
 
+/**
+ * @see UpdateDtoTest
+ */
 final readonly class UpdateDto implements Arrayable
 {
     public function __construct(

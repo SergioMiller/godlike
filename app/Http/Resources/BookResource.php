@@ -45,7 +45,7 @@ class BookResource extends JsonResource
             'title' => $this->resource->title,
             'publisher' => $this->resource->publisher,
             'genre' => $this->resource->genre,
-            'publication_date' => $this->resource->publication_date,
+            'publication_date' => $this->resource->publication_date->format('Y-m-d'),
             'amount_of_words' => (int) $this->resource->amount_of_words,
             'price' => $this->when(
                 condition: $this->resource->price > 0,

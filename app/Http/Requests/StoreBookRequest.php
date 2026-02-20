@@ -38,7 +38,7 @@ final class StoreBookRequest extends FormRequest
             'genre' => ['required', 'string', 'max:255'],
             'publication_date' => ['required', 'string', new Date()->format('Y-m-d')],
             'amount_of_words' => ['required', 'integer', 'min:1', 'max:50000'],
-            'price' => ['required', 'float', 'min:0', 'max:999999'],
+            'price' => ['required', 'numeric', 'min:0', 'max:999999'],
             'authors' => ['array'],
             'authors.*' => ['required', 'integer'],
         ];

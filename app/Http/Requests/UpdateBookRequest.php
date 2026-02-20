@@ -29,7 +29,7 @@ final class UpdateBookRequest extends FormRequest
             'genre' => ['sometimes', 'string', 'max:255'],
             'publication_date' => ['sometimes', 'string', new Date()->format('Y-m-d')],
             'amount_of_words' => ['sometimes', 'integer', 'min:1', 'max:50000'],
-            'price' => ['sometimes', 'float', 'min:0', 'max:999999'],
+            'price' => ['sometimes', 'numeric', 'min:0', 'max:999999'],
             'authors' => ['array'],
             'authors.*' => ['required', 'integer'],
         ];

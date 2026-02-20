@@ -15,6 +15,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Throwable;
 use OpenApi\Attributes as OA;
 
+/**
+ * @see BookControllerTest
+ */
 final class BookController extends Controller
 {
     public function __construct(

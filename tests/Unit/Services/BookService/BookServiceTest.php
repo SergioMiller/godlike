@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests\Unit\Services;
+namespace Tests\Unit\Services\BookService;
 
 use App\Models\Book;
 use App\Services\Book\BookService;
@@ -46,7 +46,7 @@ class BookServiceTest extends TestCase
             'publisher' => $this->faker->word(),
             'genre' => $this->faker->word(),
             'publication_date' => $this->faker->date(),
-            'amount_of_words' => $this->faker->randomDigit(),
+            'amount_of_words' => $this->faker->randomDigitNotZero(),
             'price' => $this->faker->randomNumber(2),
             'authors' => $authors->pluck('id')->toArray(),
         ]);
@@ -77,7 +77,7 @@ class BookServiceTest extends TestCase
             'publisher' => $this->faker->word(),
             'genre' => $this->faker->word(),
             'publication_date' => $this->faker->date(),
-            'amount_of_words' => $this->faker->randomDigit(),
+            'amount_of_words' => $this->faker->randomDigitNotZero(),
             'price' => $this->faker->randomNumber(2),
             'authors' => $authorsNew->pluck('id')->toArray(),
         ]);
