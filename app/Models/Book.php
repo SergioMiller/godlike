@@ -21,11 +21,6 @@ class Book extends Model
 {
     protected $table = 'books';
 
-    public function authors(): BelongsToMany
-    {
-        return $this->belongsToMany(Author::class);
-    }
-
     protected $fillable = [
         'title',
         'publisher',
@@ -33,4 +28,9 @@ class Book extends Model
         'publication_date',
         'amount_of_words',
     ];
+
+    public function authors(): BelongsToMany
+    {
+        return $this->belongsToMany(Author::class);
+    }
 }
